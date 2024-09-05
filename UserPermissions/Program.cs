@@ -1,4 +1,4 @@
-﻿namespace RTSNotifications;
+﻿namespace UserPermissions;
 
 public static class Program
 {

@@ -66,4 +66,24 @@ public class ShoppingCartTests
         double result = cart.GetTotalCartValue();
         Assert.That(result, Is.EqualTo(5));
     }
+
+    [Test]
+    public void ValidCouponDiscount_ShouldReturnDiscountedPrice()
+    {
+        ShoppingCart cart = new(new CouponDiscount("Percent25"));
+        cart.AddItem(new(beans, 2));
+
+        double result = cart.GetTotalCartValue();
+        Assert.That(result, Is.EqualTo(3));
+    }
+
+    [Test]
+    public void InvalidCouponDiscount_ShouldReturnFullPrice()
+    {
+        ShoppingCart cart = new(new CouponDiscount("Percent30"));
+        cart.AddItem(new(beans, 2));
+
+        double result = cart.GetTotalCartValue();
+        Assert.That(result, Is.EqualTo(4));
+    }
 }

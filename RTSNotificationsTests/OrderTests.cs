@@ -41,7 +41,7 @@ public class OrderTests
 
 
     [Test]
-    public void AddingPuahObserver_ShouldNotifyByPush()
+    public void AddingPushObserver_ShouldNotifyByPush()
     {
         Orders orders = new();
         orders.AddObserver(new PushObserver());
