@@ -27,7 +27,7 @@ public class ShoppingCartTests
     }
 
     [Test]
-    public void BOGODiscountForEventItems_ShouldReturnHalfPrice()
+    public void BOGODiscountForEvenItems_ShouldReturnHalfPrice()
     {
         ShoppingCart cart = new(new BuyOneGetOneDiscount());
         cart.AddItem(new(beans, 2));
